@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>తులాభారం (Thulabaram) – తెలుగు భూమికి న్యాయమైన తూకం | Real Estate Valuation Platform</title>
+  <meta name="description" content="తులాభారం - తెలుగు రాష్ట్రాల్లో వ్యవసాయ భూములు, ప్లాట్లు మరియు స్థలాల నిజమైన విలువను కచ్చితంగా అంచనా వేసే ప్రముఖ రియల్ ఎస్టేట్ వేదిక.">
+
+  <!-- Google Fonts: Noto Serif Telugu, Noto Sans Telugu, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Serif+Telugu:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="css/style.css?v=3.5">
+</head>
+<body>
+  <!-- Traditional Temple Pillars framing website top corners -->
+  <div class="site-pillar pillar-left" aria-hidden="true"></div>
+  <div class="site-pillar pillar-right" aria-hidden="true"></div>
+  <!-- Traditional Village Heritage Sketch Accent (Positioned below left pillar) -->
+  <div class="village-sketch-accent" aria-hidden="true">
+    <img src="assets/village-sketch.png" alt="" class="village-sketch-img">
+  </div>
+  <!-- Traditional Temple Gopuram Heritage Sketch Accent (Positioned below right pillar) -->
+  <div class="temple-sketch-accent" aria-hidden="true">
+    <img src="assets/temple-sketch.png" alt="" class="temple-sketch-img">
+  </div>
+
+  <!-- ========================================================================
+       1. Header & Navigation Component
+       ======================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Brand Logo -->
+        <a href="#home" class="brand-link" aria-label="తులాభారం హోమ్‌పేజీ">
+          <img src="assets/logo.png" alt="తులాభారం Logo" class="brand-logo-img">
+        </a>
+
+        <!-- Desktop Navigation Links in Telugu -->
+        <nav class="desktop-nav" aria-label="ప్రధాన నావిగేషన్">
+          <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active">హోమ్</a></li>
+            <li><a href="#valuation-search" class="nav-link">భూమి విలువ</a></li>
+            <li><a href="#featured-properties" class="nav-link">కొనుగోలులు</a></li>
+            <li><a href="#featured-properties" class="nav-link">అమ్మకం</a></li>
+            <li><a href="#trust-stats" class="nav-link">ధరల విశ్లేషణ</a></li>
+            <li><a href="#how-it-works" class="nav-link">గురించి</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Side Header Action Buttons -->
+        <div class="header-actions">
+          <button class="btn btn-outline-maroon btn-sm" onclick="window.ThulabaramApp.openModal('login-modal')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            లాగిన్
+          </button>
+          <button class="btn btn-maroon btn-sm" onclick="window.ThulabaramApp.openModal('register-modal')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            రిజిస్టర్
+          </button>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="మెనూ తెరవండి">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <a href="#home" class="nav-link active">హోమ్</a>
+      <a href="#valuation-search" class="nav-link">భూమి విలువ</a>
+      <a href="#featured-properties" class="nav-link">కొనుగోలులు</a>
+      <a href="#featured-properties" class="nav-link">అమ్మకం</a>
+      <a href="#trust-stats" class="nav-link">ధరల విశ్లేషణ</a>
+      <a href="#how-it-works" class="nav-link">గురించి</a>
+      <div class="mobile-drawer-actions">
+        <button class="btn btn-outline-maroon" style="flex:1" onclick="window.ThulabaramApp.openModal('login-modal')">లాగిన్</button>
+        <button class="btn btn-maroon" style="flex:1" onclick="window.ThulabaramApp.openModal('register-modal')">రిజిస్టర్</button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================================================
+       2. Hero Section Component (Framed with Temple Pillars)
+       ======================================================================== -->
+  <section class="hero-section" id="home">
+
+
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left Hero Content Column -->
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <div class="flourish-divider" style="justify-content: flex-start;">
+              <span class="flourish-line" style="width:28px"></span>
+              <span class="flourish-badge">
+                <svg class="flourish-icon" viewBox="0 0 24 24"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg>
+                తెలుగు భూమికి న్యాయమైన తూకం
+                <svg class="flourish-icon" viewBox="0 0 24 24"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg>
+              </span>
+              <span class="flourish-line reverse" style="width:28px"></span>
+            </div>
+          </div>
+
+          <h1 class="hero-title">
+            మీ భూమి యొక్క<br>
+            నిజమైన విలువ <span class="text-gold">తెలుసుకోండి</span>
+          </h1>
+
+          <p class="hero-desc">
+            స్థానిక మార్కెట్ డేటా, లొకేషన్ విశ్లేషణ మరియు రియల్ టైమ్ ట్రెండ్స్ ఆధారంగా మీ ఆస్తికి సరైన విలువను తెలుసుకోండి.
+          </p>
+
+          <!-- Three Short Trust Indicators -->
+          <div class="trust-indicators">
+            <div class="trust-item">
+              <span class="trust-item-icon">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </span>
+              <span>నమ్మకమైన విలువ</span>
+            </div>
+
+            <div class="trust-item">
+              <span class="trust-item-icon">
+                <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+              </span>
+              <span>స్థానిక ధరల విశ్లేషణ</span>
+            </div>
+
+            <div class="trust-item">
+              <span class="trust-item-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+              </span>
+              <span>పారదర్శక సమాచారం</span>
+            </div>
+          </div>
+
+          <!-- Hero CTA Actions -->
+          <div class="hero-cta-group">
+            <a href="#valuation-search" class="btn btn-maroon">
+              భూమి విలువ తెలుసుకోండి
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+              </svg>
+            </a>
+
+            <button class="btn btn-outline-gold" onclick="window.ThulabaramApp.openExplainerVideo()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              ఎలా పనిచేస్తుందో చూడండి
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Hero Media Column (Configurable HeroScaleVideo Component) -->
+        <div class="hero-media-col">
+          <div id="hero-scale-video-root"
+               class="hero-scale-video-container"
+               data-placeholder=""
+               data-video-mp4="weighing%20animation.mp4"
+               data-video-webm="">
+            <div class="hero-scale-media-wrapper">
+              <div class="hero-scale-badge left"><span>🏡</span><span>నివాస స్థలాలు</span></div>
+              <div class="hero-scale-badge right"><span>📍</span><span>వ్యవసాయ భూములు</span></div>
+              <video class="hero-scale-media-element"
+                     autoplay
+                     muted
+                     loop
+                     playsinline
+                     webkit-playsinline
+                     preload="auto">
+                <source src="weighing%20animation.mp4?v=2.0" type="video/mp4">
+                <source src="weighing animation.mp4?v=2.0" type="video/mp4">
+                <source src="assets/hero-scale-video.mp4?v=2.0" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       3. Property Valuation Search Panel (Overlapping Card)
+       ======================================================================== -->
+  <section class="valuation-search-section" id="valuation-search">
+    <div class="container">
+      <div class="valuation-card">
+                <!-- Traditional Indian Gold Corner Flourish Ornaments on all 4 corners -->
+        <svg class="corner-ornament corner-top-left" viewBox="0 0 60 60" fill="none">
+          <path d="M4 28 C4 14, 14 4, 28 4 M4 4 L4 12 M4 4 L12 4" stroke="#B58A3A" stroke-width="2" stroke-linecap="round"/>
+          <path d="M10 10 Q24 10 24 24 Q10 24 10 10Z" fill="#F7E6C4" stroke="#B58A3A" stroke-width="1.2"/>
+          <circle cx="17" cy="17" r="2.5" fill="#641E24"/>
+          <circle cx="6" cy="6" r="2" fill="#B58A3A"/>
+          <circle cx="34" cy="5" r="1.5" fill="#B58A3A"/>
+          <circle cx="5" cy="34" r="1.5" fill="#B58A3A"/>
+        </svg>
+
+        <svg class="corner-ornament corner-top-right" viewBox="0 0 60 60" fill="none">
+          <path d="M4 28 C4 14, 14 4, 28 4 M4 4 L4 12 M4 4 L12 4" stroke="#B58A3A" stroke-width="2" stroke-linecap="round"/>
+          <path d="M10 10 Q24 10 24 24 Q10 24 10 10Z" fill="#F7E6C4" stroke="#B58A3A" stroke-width="1.2"/>
+          <circle cx="17" cy="17" r="2.5" fill="#641E24"/>
+          <circle cx="6" cy="6" r="2" fill="#B58A3A"/>
+          <circle cx="34" cy="5" r="1.5" fill="#B58A3A"/>
+          <circle cx="5" cy="34" r="1.5" fill="#B58A3A"/>
+        </svg>
+
+        <svg class="corner-ornament corner-bottom-left" viewBox="0 0 60 60" fill="none">
+          <path d="M4 28 C4 14, 14 4, 28 4 M4 4 L4 12 M4 4 L12 4" stroke="#B58A3A" stroke-width="2" stroke-linecap="round"/>
+          <path d="M10 10 Q24 10 24 24 Q10 24 10 10Z" fill="#F7E6C4" stroke="#B58A3A" stroke-width="1.2"/>
+          <circle cx="17" cy="17" r="2.5" fill="#641E24"/>
+          <circle cx="6" cy="6" r="2" fill="#B58A3A"/>
+          <circle cx="34" cy="5" r="1.5" fill="#B58A3A"/>
+          <circle cx="5" cy="34" r="1.5" fill="#B58A3A"/>
+        </svg>
+
+        <svg class="corner-ornament corner-bottom-right" viewBox="0 0 60 60" fill="none">
+          <path d="M4 28 C4 14, 14 4, 28 4 M4 4 L4 12 M4 4 L12 4" stroke="#B58A3A" stroke-width="2" stroke-linecap="round"/>
+          <path d="M10 10 Q24 10 24 24 Q10 24 10 10Z" fill="#F7E6C4" stroke="#B58A3A" stroke-width="1.2"/>
+          <circle cx="17" cy="17" r="2.5" fill="#641E24"/>
+          <circle cx="6" cy="6" r="2" fill="#B58A3A"/>
+          <circle cx="34" cy="5" r="1.5" fill="#B58A3A"/>
+          <circle cx="5" cy="34" r="1.5" fill="#B58A3A"/>
+        </svg>
+
+        <h2 class="valuation-title">
+          <span class="title-flourish">❧</span>
+          మీ భూమి విలువను వెంటనే తెలుసుకోండి
+          <span class="title-flourish reverse">❧</span>
+        </h2>
+
+        <form class="valuation-form" id="valuation-form">
+          <!-- 1. Location / Town -->
+          <div class="form-group">
+            <div class="input-container">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <select class="form-select" id="val-location" required>
+                <option value="shankarpally">శంకర్పల్లి, హైదరాబాద్</option>
+                <option value="gachibowli">గచ్చిబౌలి, హైదరాబాద్</option>
+                <option value="shamirpet">శామీర్పేట, హైదరాబాద్</option>
+                <option value="patanacheru">పటాన్‌చెరు, హైదరాబాద్</option>
+                <option value="kollur">కొల్లూరు, హైదరాబాద్</option>
+                <option value="kokapet">కోకాపేట, హైదరాబాద్</option>
+                <option value="vijayawada">విజయవాడ, ఆంధ్రప్రదేశ్</option>
+                <option value="visakhapatnam">విశాఖపట్నం, ఆంధ్రప్రదేశ్</option>
+              </select>
+              <svg class="select-arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+            </div>
+          </div>
+
+          <!-- 2. Land Type -->
+          <div class="form-group">
+            <div class="input-container">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              </svg>
+              <select class="form-select" id="val-type" required>
+                <option value="agriculture">వ్యవసాయ భూమి (పొలం)</option>
+                <option value="residential">రెసిడెన్షియల్ ప్లాట్ (స్థలం)</option>
+                <option value="commercial">కమర్షియల్ భూమి</option>
+                <option value="farmland">ఫామ్‌ల్యాండ్ / తోట</option>
+              </select>
+              <svg class="select-arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+            </div>
+          </div>
+
+          <!-- 3. Land Area -->
+          <div class="form-group">
+            <div class="input-container">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h3v2H7zm0 4h3v2H7zm0 4h3v2H7zm5-8h5v2h-5zm0 4h5v2h-5zm0 4h5v2h-5z"/>
+              </svg>
+              <input type="number" step="any" class="form-input" id="val-area" placeholder="విస్తీర్ణం (ఎకరాలు / గజాలు)" value="2.5" required>
+            </div>
+          </div>
+
+          <!-- 4. Submit CTA -->
+          <button type="submit" class="btn btn-maroon btn-search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+            విలువ తెలుసుకోండి
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       4. Trust Statistics Section
+       ======================================================================== -->
+  <section class="stats-section" id="trust-stats">
+    <div class="container">
+            <div class="stats-grid">
+        <!-- Stat 1 -->
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number dynamic-stat" id="stat-registered" data-target="10482" data-suffix="+" data-format="indian">10,482+</span>
+            <span class="stat-label">నమోదైన భూమి వివరాలు</span>
+          </div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number dynamic-stat" id="stat-regions" data-target="158" data-suffix="+">158+</span>
+            <span class="stat-label">ప్రాంతాల ధరల డేటా</span>
+          </div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number dynamic-stat" id="stat-accuracy" data-target="96" data-suffix="%">96%</span>
+            <span class="stat-label">ఖచ్చితమైన విలువ అంచనా</span>
+          </div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number dynamic-stat" id="stat-transparency" data-target="100" data-suffix="%">100%</span>
+            <span class="stat-label">పారదర్శక &amp; సురక్షితమైన</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       5. How Thulabaram Works Section
+       ======================================================================== -->
+  <section class="how-it-works-section" id="how-it-works">
+    <div class="container">
+      <div class="how-it-works-header">
+        <div class="flourish-divider">
+          <span class="flourish-line"></span>
+          <span class="flourish-badge">సులువుగా &amp; వేగంగా</span>
+          <span class="flourish-line reverse"></span>
+        </div>
+
+        <h2 class="section-title">తులాభారం ఎలా పనిచేస్తుంది?</h2>
+        <p class="section-subtitle">నాలుగు సులభమైన దశల్లో మీ భూమికి సరైన మార్కెట్ విలువను నిర్ధారించండి</p>
+      </div>
+
+            <div class="how-it-works-split-grid">
+        <!-- Left Side: Explanatory Ad Video (Client-Attractive Video Player) -->
+        <div class="how-it-works-video-col">
+          <div class="explainer-video-card">
+            <div class="explainer-video-header">
+              <span class="video-live-badge"><span class="badge-dot"></span> తులాభారం స్పెషల్ యాడ్</span>
+              <span class="video-time-badge">HD &bull; 1 నిమిషం</span>
+            </div>
+            
+            <div class="explainer-video-wrapper">
+              <video id="explainer-ad-video"
+                     class="explainer-video-element"
+                     autoplay
+                     muted
+                     loop
+                     playsinline
+                     webkit-playsinline
+                     preload="auto"
+                     controls>
+                <source src="thulabaramadd.mp4" type="video/mp4">
+                <source src="assets/thulabaramadd.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="explainer-video-footer">
+              <div class="video-footer-icon">⚖</div>
+              <div class="video-footer-text">
+                <strong>తులాభారంతో సరైన మార్కెట్ విలువ</strong>
+                <span>పారదర్శక భూమి తూకం ప్రక్రియను ఈ వీడియో ద్వారా స్పష్టంగా వీక్షించండి.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: 4 Steps Flow -->
+        <div class="how-it-works-steps-col">
+          <div class="steps-flow-container">
+            <!-- Step 1 -->
+            <div class="step-flow-item">
+              <div class="step-icon-wrap">
+                <img src="assets/step-icon-1.png" alt="వివరాలు ఇవ్వండి" class="step-icon-img">
+              </div>
+              <div class="step-flow-content">
+                <h3 class="step-title">1. వివరాలు ఇవ్వండి</h3>
+                <p class="step-desc">భూమి స్థానం, రకం మరియు విస్తీర్ణం నమోదు చేయండి.</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-flow-item">
+              <div class="step-icon-wrap">
+                <img src="assets/step-icon-2.png" alt="డేటా విశ్లేషణ" class="step-icon-img">
+              </div>
+              <div class="step-flow-content">
+                <h3 class="step-title">2. డేటా విశ్లేషణ</h3>
+                <p class="step-desc">స్థానిక మార్కెట్, ప్రభుత్వ రికార్డులు మరియు ట్రెండ్లను విశ్లేషిస్తాం.</p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-flow-item">
+              <div class="step-icon-wrap">
+                <img src="assets/step-icon-3.png" alt="నిజమైన విలువ" class="step-icon-img">
+              </div>
+              <div class="step-flow-content">
+                <h3 class="step-title">3. నిజమైన విలువ</h3>
+                <p class="step-desc">అన్ని అంశాల ఆధారంగా సరైన భూమి విలువను అంచనా వేస్తాం.</p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-flow-item">
+              <div class="step-icon-wrap">
+                <img src="assets/step-icon-4.png" alt="ఉత్తమ నిర్ణయం" class="step-icon-img">
+              </div>
+              <div class="step-flow-content">
+                <h3 class="step-title">4. ఉత్తమ నిర్ణయం</h3>
+                <p class="step-desc">కొనుగోలు, అమ్మకం లేదా పెట్టుబడి కోసం నమ్మకమైన నిర్ణయం తీసుకోండి.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       6. Featured Property Listings Section
+       ======================================================================== -->
+  <section class="featured-properties-section" id="featured-properties">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <h2 class="section-title" style="margin-bottom:0">తాజా భూమి జాబితాలు —</h2>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="listings-filter-group">
+          <button class="filter-btn active" data-filter="sale">అమ్మకానికి</button>
+          <button class="filter-btn" data-filter="wanted">కొనుగోలుకు ఆసక్తి</button>
+          <button class="filter-btn" data-filter="high-value">అధిక విలువ గలవి</button>
+          <button class="filter-btn" data-filter="all">అన్నీ</button>
+        </div>
+      </div>
+
+      <!-- Property Cards Grid (Populated dynamically) -->
+      <div class="properties-grid" id="properties-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       7. Footer Component
+       ======================================================================== -->
+  <footer class="site-footer">
+    <!-- Subtle Traditional Telugu Architectural Line Art Silhouettes -->
+    <div class="footer-temple-silhouette" style="background-image: url('assets/pillar-left.png');"></div>
+
+    <div class="container">
+      <!-- Top Tagline Banner -->
+      <div class="footer-top-banner">
+        <h3 class="footer-tagline">మీ భూమి... మీ నిర్ణయం... తులాభారంతో మరింత నమ్మకంగా.</h3>
+        <a href="#valuation-search" class="btn btn-gold">
+          ఇప్పుడే ప్రారంభించండి
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 4-Column Footer Grid -->
+      <div class="footer-grid">
+        <!-- Column 1: Brand Info -->
+        <div class="footer-brand-col">
+          <img src="assets/logo-light.png" alt="తులాభారం Logo" class="footer-logo-img">
+          <p class="footer-desc">
+            తెలుగు రాష్ట్రాల్లో భూమి విలువలను పారదర్శకంగా, శాస్త్రీయంగా మరియు కచ్చితంగా అంచనా వేసే అత్యున్నత ప్రాప్‌టెక్ వేదిక.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-icon-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+            <a href="#" class="social-icon-link" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z"/></svg>
+            </a>
+            <a href="#" class="social-icon-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4 class="footer-title">త్వరిత లింకులు</h4>
+          <ul class="footer-links">
+            <li><a href="#home" class="footer-link">హోమ్ పేజీ</a></li>
+            <li><a href="#valuation-search" class="footer-link">భూమి విలువ కాలిక్యులేటర్</a></li>
+            <li><a href="#featured-properties" class="footer-link">తాజా ఆస్తుల జాబితా</a></li>
+            <li><a href="#trust-stats" class="footer-link">మార్కెట్ ధరల విశ్లేషణ</a></li>
+            <li><a href="#how-it-works" class="footer-link">తులాభారం ప్రయోజనాలు</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Popular Regions -->
+        <div>
+          <h4 class="footer-title">ప్రసిద్ధ ప్రాంతాలు</h4>
+          <ul class="footer-links">
+            <li><a href="#valuation-search" class="footer-link">శంకర్పల్లి &amp; మోకిల</a></li>
+            <li><a href="#valuation-search" class="footer-link">గచ్చిబౌలి &amp; కోకాపేట</a></li>
+            <li><a href="#valuation-search" class="footer-link">శామీర్పేట &amp; మేడ్చల్</a></li>
+            <li><a href="#valuation-search" class="footer-link">విజయవాడ బైపాస్</a></li>
+            <li><a href="#valuation-search" class="footer-link">విశాఖపట్నం భోగాపురం</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Info -->
+        <div>
+          <h4 class="footer-title">సంప్రదించండి</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>తులాభారం టవర్స్, ఫైనాన్షియల్ డిస్ట్రిక్ట్, హైదరాబాద్ - 500032</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            <span>+91 94400 12345 / 040-23456789</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <span>support@thulabaram.in</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="footer-bottom">
+        <div>&copy; 2026 తులాభారం (Thulabaram). సర్వ హక్కులు ప్రత్యేకించబడ్డాయి.</div>
+        <div>
+          <a href="#" style="color:#CDBBA7; text-decoration:none; margin-right:16px;">గోప్యతా విధానం</a>
+          <a href="#" style="color:#CDBBA7; text-decoration:none; margin-right:16px;">నిబంధనలు</a>
+          <a href="#" style="color:#CDBBA7; text-decoration:none;">సైట్‌మ్యాప్</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========================================================================
+       8. Modals (Interactive Valuation Result, Property Details, Video Explainer)
+       ======================================================================== -->
+
+  <!-- Valuation Result Modal -->
+  <div class="modal-overlay" id="valuation-result-modal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="window.ThulabaramApp.closeModal('valuation-result-modal')">&times;</button>
+      <div class="val-result-header">
+        <div class="flourish-divider">
+          <span class="flourish-line"></span>
+          <span class="flourish-badge">తులాభారం విశ్లేషణ ఫలితం</span>
+          <span class="flourish-line reverse"></span>
+        </div>
+        <h3 class="section-title" style="font-size:24px; margin-bottom:6px;">అంచనా వేసిన భూమి విలువ</h3>
+        <p style="font-size:14px; color:var(--color-text-muted);">
+          <span id="res-location">శంకర్పల్లి</span> &bull; <span id="res-type">వ్యవసాయ భూమి</span> &bull; <span id="res-area">2.5 ఎకరాలు</span>
+        </p>
+      </div>
+
+      <div class="val-result-price-box">
+        <div style="font-size:13px; color:var(--color-text-muted); margin-bottom:4px;">మొత్తం మార్కెట్ విలువ</div>
+        <div class="val-result-amount" id="res-total">₹ 3.25 కోట్లు</div>
+      </div>
+
+      <div class="val-breakdown-grid">
+        <div class="val-breakdown-card">
+          <div class="val-breakdown-label">ప్రాంతం సగటు ధర</div>
+          <div class="val-breakdown-val" id="res-unit-rate">₹ 1.30 కోట్లు / ఎకరం</div>
+        </div>
+        <div class="val-breakdown-card">
+          <div class="val-breakdown-label">ప్రభుత్వ రిజిస్ట్రేషన్ విలువ</div>
+          <div class="val-breakdown-val" id="res-govt-rate">₹ 2.34 కోట్లు</div>
+        </div>
+        <div class="val-breakdown-card">
+          <div class="val-breakdown-label">విశ్వసనీయత స్కోరు</div>
+          <div class="val-breakdown-val" style="color:var(--color-green);" id="res-accuracy">97% ఖచ్చితం</div>
+        </div>
+        <div class="val-breakdown-card">
+          <div class="val-breakdown-label">ధరణి / రెవెన్యూ రికార్డులు</div>
+          <div class="val-breakdown-val" style="color:var(--color-maroon);">వెరిఫై చేయబడింది</div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px;">
+        <button class="btn btn-maroon" style="flex:1" onclick="alert('పూర్తి భూమి డాక్యుమెంట్ రిపోర్ట్ మీ ఈమెయిల్‌కు పంపబడుతుంది.')">
+          రిపోర్ట్ డౌన్‌లోడ్ చేసుకోండి
+        </button>
+        <button class="btn btn-outline-gold" style="flex:1" onclick="window.ThulabaramApp.closeModal('valuation-result-modal')">
+          సరే
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Detail Modal -->
+  <div class="modal-overlay" id="property-detail-modal">
+    <div class="modal-card" style="max-width: 680px;">
+      <button class="modal-close-btn" onclick="window.ThulabaramApp.closeModal('property-detail-modal')">&times;</button>
+      <div style="width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; margin-bottom:18px;">
+        <img id="modal-prop-img" src="" alt="Property" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px;">
+        <div>
+          <h3 id="modal-prop-title" class="property-title" style="font-size:22px;"></h3>
+          <div id="modal-prop-loc" class="property-location" style="font-size:15px; margin-top:4px;"></div>
+        </div>
+        <div style="text-align:right;">
+          <div id="modal-prop-price" class="property-price" style="font-size:24px;"></div>
+          <div id="modal-prop-unit" class="property-unit-price" style="font-size:13px;"></div>
+        </div>
+      </div>
+
+      <div id="modal-prop-specs" class="val-breakdown-grid"></div>
+
+      <div style="display:flex; gap:12px; margin-top:16px;">
+        <button class="btn btn-maroon" style="flex:1" onclick="alert('మా ప్రాపర్టీ సలహాదారు వెంటనే మిమ్మల్ని సంప్రదిస్తారు.')">
+          సైట్ విజిట్ బుక్ చేయండి
+        </button>
+        <button class="btn btn-outline-maroon" style="flex:1" onclick="window.ThulabaramApp.closeModal('property-detail-modal')">
+          మూసివేయండి
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explainer Video / Workflow Modal -->
+  <div class="modal-overlay" id="explainer-video-modal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="window.ThulabaramApp.closeModal('explainer-video-modal')">&times;</button>
+      <div class="val-result-header">
+        <h3 class="section-title" style="font-size:22px;">తులాభారం తూకం ప్రక్రియ</h3>
+        <p style="font-size:14px; color:var(--color-text-muted);">ఎలాంటి పక్షపాతం లేకుండా మీ భూమికి సరైన విలువ లెక్కింపు</p>
+      </div>
+      <div style="padding:16px; background:#FDF4E2; border-radius:14px; border:1px solid var(--color-border); margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.7; color:var(--color-text);">
+          తులాభారం (Thulabaram) రియల్ టైమ్ శాటిలైట్ మ్యాపింగ్, ధరణి పోర్టల్ డేటా, ఇటీవలి సబ్-రిజిస్ట్రార్ రిజిస్ట్రేషన్ విలువలు మరియు స్థానిక మార్కెట్ డిమాండ్ ఆధారంగా అత్యంత నమ్మకమైన భూమి ధరల తూకాన్ని మీకు అందిస్తుంది.
+        </p>
+      </div>
+      <button class="btn btn-maroon" style="width:100%;" onclick="window.ThulabaramApp.closeModal('explainer-video-modal')">
+        అర్థమైంది
+      </button>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal-overlay" id="login-modal">
+    <div class="modal-card" style="max-width: 440px;">
+      <button class="modal-close-btn" onclick="window.ThulabaramApp.closeModal('login-modal')">&times;</button>
+      <div style="text-align:center; margin-bottom:20px;">
+        <img src="assets/logo.png" alt="Logo" style="height:44px; margin-bottom:10px;">
+        <h3 style="font-family:var(--font-heading); color:var(--color-maroon);">లాగిన్ అవ్వండి</h3>
+        <p style="font-size:13px; color:var(--color-text-muted);">మీ మొబైల్ నంబర్ లేదా ఈమెయిల్ ద్వారా ప్రవేశించండి</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:20px;">
+        <div class="input-container">
+          <input type="text" class="form-input" placeholder="మొబైల్ నంబర్ లేదా ఈమెయిల్">
+        </div>
+        <div class="input-container">
+          <input type="password" class="form-input" placeholder="పాస్‌వర్డ్">
+        </div>
+      </div>
+      <button class="btn btn-maroon" style="width:100%;" onclick="alert('లాగిన్ విజయవంతమైంది!'); window.ThulabaramApp.closeModal('login-modal');">
+        లాగిన్
+      </button>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal-overlay" id="register-modal">
+    <div class="modal-card" style="max-width: 440px;">
+      <button class="modal-close-btn" onclick="window.ThulabaramApp.closeModal('register-modal')">&times;</button>
+      <div style="text-align:center; margin-bottom:20px;">
+        <img src="assets/logo.png" alt="Logo" style="height:44px; margin-bottom:10px;">
+        <h3 style="font-family:var(--font-heading); color:var(--color-maroon);">నూతన ఖాతా తెరవండి</h3>
+        <p style="font-size:13px; color:var(--color-text-muted);">ఉచితంగా నమోదు చేసుకుని పూర్తి ధరల డేటాను పొందండి</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:20px;">
+        <div class="input-container">
+          <input type="text" class="form-input" placeholder="పూర్తి పేరు">
+        </div>
+        <div class="input-container">
+          <input type="tel" class="form-input" placeholder="మొబైల్ నంబర్">
+        </div>
+        <div class="input-container">
+          <input type="email" class="form-input" placeholder="ఈమెయిల్ చిరునామా">
+        </div>
+      </div>
+      <button class="btn btn-maroon" style="width:100%;" onclick="alert('నమోదు పూర్తయింది! ధన్యవాదాలు.'); window.ThulabaramApp.closeModal('register-modal');">
+        ఖాతా సృష్టించండి
+      </button>
+    </div>
+  </div>
+
+  <!-- App Script -->
+  <script src="js/app.js?v=3.5"></script>
+</body>
+</html>
